@@ -12,4 +12,44 @@ package org.iesalandalus.programacion.caballoajedrez;
 public class Posicion {
     private int fila;
     private char columna;
+    
+    /**
+     * Hemos declarado el atributo fila que debe estar entre 1 y 8.
+     * @param filaValor 
+     */
+    public void setFila(int filaValor){
+        if(filaValor>=1 && filaValor<=8){
+            fila=filaValor;
+        }
+        else{
+            throw new IllegalArgumentException("La Fila introducida no es válida");   
+        }
+    }
+    /**
+     * Obtenemos el valor de la variable Fila
+     * @return devuelve un valor entero
+     */
+    public int getFila(){
+        return fila;
+    }
+    /**
+     * Establecemos el valor del atributo Columna que debe estar comprendido entre las letras abcdefgh
+     * @param columnaValor 
+     */
+    public void setColumna(char columnaValor){
+        String caracteresValidos="abcdefgh";
+        if(caracteresValidos.indexOf(columnaValor)>=0){
+            columna=columnaValor;
+        }
+        else{
+            throw new IllegalArgumentException("La Columna introducida no es válida");
+        }
+    }
+    /**
+     * Obtenemos el valor de la variable columna
+     * @return devuelve un char
+     */
+    public char getColumna(){
+        return columna;
+    }
 }
