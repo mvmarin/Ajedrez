@@ -70,4 +70,26 @@ public class Posicion {
     public char getColumna(){
         return columna;
     }
+    
+    /**
+     * Introducimos el método equals para comparar el objeto que nos pasan con los valores que tenemos en este objeto.
+     * @param obj
+     * @return 
+     */
+    public boolean equals(Object obj){
+        if(obj instanceof Posicion){
+            Posicion tmp = (Posicion) obj;
+            if(fila == tmp.getFila() && columna == tmp.getColumna()){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        else{
+            return false;
+        }
+            
+    }
+            
 }
