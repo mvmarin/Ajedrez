@@ -35,6 +35,15 @@ public class Caballo {
         
     }
     /**
+     * Constructor copia de Caballo
+     * @param caballoValor 
+     */
+    public Caballo(Caballo caballoValor){
+        color=caballoValor.getColor();
+        posicion=new Posicion(caballoValor.getPosicion());   
+    }
+    
+    /**
      * Creamos un constructor para comprobar que si el caballo no está en la columna b ó g, se lance un mensaje y lo situe en la fila 1 si es blanco o en la 8 si es negro
      * @param colorValor
      * @param columnaValor 
