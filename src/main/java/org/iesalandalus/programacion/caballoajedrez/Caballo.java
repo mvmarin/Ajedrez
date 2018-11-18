@@ -34,6 +34,24 @@ public class Caballo {
         }
         
     }
+    /**
+     * Creamos un constructor para comprobar que si el caballo no está en la columna b ó g, se lance un mensaje y lo situe en la fila 1 si es blanco o en la 8 si es negro
+     * @param colorValor
+     * @param columnaValor 
+     */
+    public Caballo(Color colorValor, char columnaValor){
+        color = colorValor;
+        String caracteresValidos="bg";
+        if(caracteresValidos.indexOf(columnaValor)>=0){
+            if(color == Color.BLANCO){
+                posicion = new Posicion(1, columnaValor);
+            }else{
+                posicion = new Posicion(8, columnaValor);
+            }
+        }else{
+            throw new IllegalArgumentException("Columna no válida");
+        }
+    }
     
     /**
      * Definimos el set de nuestro atributo Color
