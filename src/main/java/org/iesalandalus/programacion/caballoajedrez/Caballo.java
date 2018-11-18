@@ -37,6 +37,10 @@ public class Caballo {
         posicion=new Posicion(posicionValor);
     }
     
+    /**
+     * Definimos el get de la Posicion llamando al return para devolver el valor.
+     * @return 
+     */
     public Posicion getPosicion(){
         return posicion;
     }
