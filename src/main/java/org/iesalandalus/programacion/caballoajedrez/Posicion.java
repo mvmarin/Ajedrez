@@ -12,7 +12,17 @@ package org.iesalandalus.programacion.caballoajedrez;
 public class Posicion {
     private int fila;
     private char columna;
+    /**
+     * Constructor de la clase Posicion que inicializa las dos variables
+     * @param columnaValor 
+     * @param filaValor 
+     */
     
+    public Posicion(char columnaValor, int filaValor){
+        setColumna(columnaValor);
+        setFila(filaValor);
+    }
+            
     /**
      * Hemos declarado el atributo fila que debe estar entre 1 y 8.
      * @param filaValor 
