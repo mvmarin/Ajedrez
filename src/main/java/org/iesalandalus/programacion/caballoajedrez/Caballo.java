@@ -22,6 +22,20 @@ public class Caballo {
     }
     
     /**
+     * Introducimos un constructor que si el caballo es blanco tendrá posición 1b y si es negro 8b
+     * @param colorValor 
+     */
+    public Caballo(Color colorValor){
+        color = colorValor;
+        if(color == Color.BLANCO){
+            posicion = new Posicion(1, 'b');
+        }else{
+            posicion = new Posicion(8, 'b');
+        }
+        
+    }
+    
+    /**
      * Definimos el set de nuestro atributo Color
      * @param colorValor 
      */
