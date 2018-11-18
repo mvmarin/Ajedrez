@@ -14,6 +14,14 @@ public class Caballo {
     private Posicion posicion;
     
     /**
+     * Creamos un constructor por defecto de Caballo.
+     */
+    public Caballo(){
+        color = Color.NEGRO;
+        posicion = new Posicion(8,'b');
+    }
+    
+    /**
      * Definimos el set de nuestro atributo Color
      * @param colorValor 
      */

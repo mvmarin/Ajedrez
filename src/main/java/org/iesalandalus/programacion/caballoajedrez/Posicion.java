@@ -18,7 +18,7 @@ public class Posicion {
      * @param filaValor 
      */
     
-    public Posicion(char columnaValor, int filaValor){
+    public Posicion(int filaValor , char columnaValor){
         setColumna(columnaValor);
         setFila(filaValor);
     }
