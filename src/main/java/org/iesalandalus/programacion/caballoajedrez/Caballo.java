@@ -5,6 +5,8 @@
  */
 package org.iesalandalus.programacion.caballoajedrez;
 
+import javax.naming.OperationNotSupportedException;
+
 /**
  *
  * @author victoriamarin
@@ -94,5 +96,62 @@ public class Caballo {
         return posicion;
     }
     
+    /**
+     * Creamos el método mover con las distintas direcciones e incluimos la excepción.
+     * @param dir
+     * @throws OperationNotSupportedException 
+     */
+    public void mover(Direccion dir) throws OperationNotSupportedException{
+        int filaActual=posicion.getFila();
+        char columnaActual=posicion.getColumna();
+        String caracteresValidos="abcdefgh";
+        int posicionColumnaActual = caracteresValidos.indexOf(columnaActual);
+        int filaNueva=-1;
+        int posicionColumnaNueva=-1;
+        
+        switch(dir){
+            case ARRIBA_IZQUIERDA:filaNueva=filaActual-2;
+                                  posicionColumnaNueva=posicionColumnaActual-1;
+                                  break;
+                              
+           case ARRIBA_DERECHA:filaNueva=filaActual-2;
+                                  posicionColumnaNueva=posicionColumnaActual+1;
+                                  break;
+                                  
+            case DERECHA_ARRIBA:filaNueva=filaActual-1;
+                                  posicionColumnaNueva=posicionColumnaActual+2;
+                                  break;
+            
+            case DERECHA_ABAJO:filaNueva=filaActual+1;
+                                  posicionColumnaNueva=posicionColumnaActual+2;
+                                  break;
+                                  
+            case ABAJO_DERECHA:filaNueva=filaActual+2;
+                                  posicionColumnaNueva=posicionColumnaActual+1;
+                                  break;
+                                  
+            case ABAJO_IZQUIERDA:filaNueva=filaActual+2;
+                                  posicionColumnaNueva=posicionColumnaActual-1;
+                                  break;
+                                  
+            case IZQUIERDA_ARRIBA:filaNueva=filaActual-1;
+                                  posicionColumnaNueva=posicionColumnaActual-2;
+                                  break;
+                                  
+            case IZQUIERDA_ABAJO:filaNueva=filaActual+1;
+                                  posicionColumnaNueva=posicionColumnaActual-2;
+                                  break;                        
+       }   
+        if(filaNueva>=1 && filaNueva<=8){
+            if(posicionColumnaNueva>=0 && posicionColumnaNueva<=7){
+                posicion.setFila(filaNueva);
+                posicion.setColumna(caracteresValidos.charAt(posicionColumnaNueva));
+            }else{
+                throw new OperationNotSupportedException("La columna introducida no es válida");
+            }
+        }else{
+            throw new OperationNotSupportedException("La fila introducida no es válida");
+        }
+    }
     
 }
