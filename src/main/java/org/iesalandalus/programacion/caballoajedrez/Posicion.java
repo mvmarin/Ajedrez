@@ -22,6 +22,14 @@ public class Posicion {
         setColumna(columnaValor);
         setFila(filaValor);
     }
+    /**
+     * Constructor copia del objeto Posicion
+     * @param posicionValor 
+     */
+    public Posicion(Posicion posicionValor){
+        fila=posicionValor.getFila();
+        columna=posicionValor.getColumna();
+    }
             
     /**
      * Hemos declarado el atributo fila que debe estar entre 1 y 8.
