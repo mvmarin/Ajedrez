@@ -91,5 +91,12 @@ public class Posicion {
         }
             
     }
+    /**
+     * Devolverá el valor de la fila y la columna
+     * @return 
+     */
+    public String toString(){
+        return "La fila es "+fila+" y la columna e "+columna;
+    }
             
 }
