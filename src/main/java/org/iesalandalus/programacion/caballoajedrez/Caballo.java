@@ -114,7 +114,7 @@ public class Caballo {
                                   posicionColumnaNueva=posicionColumnaActual-1;
                                   break;
                               
-           case ARRIBA_DERECHA:filaNueva=filaActual-2;
+            case ARRIBA_DERECHA:filaNueva=filaActual-2;
                                   posicionColumnaNueva=posicionColumnaActual+1;
                                   break;
                                   
@@ -152,6 +152,22 @@ public class Caballo {
         }else{
             throw new OperationNotSupportedException("La fila introducida no es válida");
         }
+    }
+    
+    
+    /**
+     * Utilizamos el método equals para comparar el color y la posición de nuestro objeto caballo con el objeto que nos han pasado en la entrada
+     * @param obj objeto con el que vamos a realizar la comprobación
+     * @return Terminamos la ejecución del método devolviendo true si se cumple la comparación del color y el objeto de nuestra clase caballo y sino devuelve false.
+     */
+    public boolean equals(Object obj){
+        if(obj instanceof Caballo){
+            Caballo tmp = (Caballo) obj;
+            if(color == tmp.getColor() && posicion == tmp.getPosicion()){
+                return true;
+            }
+        }
+        return false;    
     }
     
 }
