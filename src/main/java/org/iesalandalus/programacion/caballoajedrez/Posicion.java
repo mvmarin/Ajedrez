@@ -96,7 +96,7 @@ public class Posicion {
      * @return 
      */
     public String toString(){
-        return "La fila es "+fila+" y la columna e "+columna;
+        return "La fila es "+fila+" y la columna es "+columna;
     }
             
 }
