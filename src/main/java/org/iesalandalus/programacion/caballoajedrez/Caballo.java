@@ -170,4 +170,12 @@ public class Caballo {
         return false;    
     }
     
+    /**
+     * Devolverá el valor del color y de la posición, llamando al método toString definido en la clase posición.
+     * @return Devuelve una cadena de texto que explica el color y la posición
+     */
+    public String toString(){
+        return "El color es "+color+" y la posición es "+posicion.toString();
+    }
+    
 }
